@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
       outDir: 'dist',
       rollupOptions: {
         input: {
+          root: resolve(__dirname, 'index.html'),
           main: resolve(__dirname, 'html-css/contenido basico de la pagina/index.html'),
           formulario: resolve(__dirname, 'html-css/formulario/formulario.html')
         }
