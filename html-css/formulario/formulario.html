@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Realiza tu pedido de chorizos artesanales Q' Chorizos. Producto premium, entrega rápida y pago seguro." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#c0392b" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="estilos-base.css" />
+    <link rel="stylesheet" href="estilos-interaccion.css" />
+
+
+    <title>Pedido — Q' Chorizos | Artesanales Premium</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <span class="site-logo" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l3 3 5-5"/></svg>
+        </span>
+        <div class="brand-group">
+          <span class="site-name">Q' Chorizos</span>
+          <span class="brand-tagline">Artesanales desde 1998</span>
+        </div>
+      </div>
+      <div class="header-trust-row" aria-label="Indicadores de confianza">
+        <span class="trust-pill">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          +2.500 pedidos entregados
+        </span>
+        <span class="trust-pill">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          4.9/5 valoración
+        </span>
+      </div>
+    </header>
+
+    <main class="contenedor-formulario" role="main">
+      <div class="order-layout">
+
+        <!-- VALUE / HERO SECTION -->
+        <aside class="order-sidebar" aria-label="Información del producto">
+          <div class="sidebar-inner">
+            <div class="sidebar-hero">
+              <div class="hero-decoration" aria-hidden="true">
+                <div class="hero-circle hero-circle-1"></div>
+                <div class="hero-circle hero-circle-2"></div>
+                <div class="hero-circle hero-circle-3"></div>
+              </div>
+
+              <span class="product-badge">
+                <span class="badge-dot" aria-hidden="true"></span>
+                Artesanal Premium
+              </span>
+
+              <h1 class="sidebar-title">Chorizos<br /><em>artesanales</em></h1>
+              <p class="sidebar-desc">Receta familiar de tres generaciones. Carne seleccionada, especias naturales y ahumado lento con madera de roble.</p>
+
+              <div class="product-price-block">
+                <div class="product-price">
+                  <span class="price-amount">$12.900</span>
+                  <span class="price-unit">/ unidad</span>
+                </div>
+                <div class="order-summary" aria-label="Resumen del pedido">
+                  <div class="summary-row">
+                    <span class="summary-label">Cantidad</span>
+                    <span class="summary-value" id="summary-qty">1</span>
+                  </div>
+                  <div class="summary-row summary-total">
+                    <span class="summary-label">Total estimado</span>
+                    <span class="summary-total-value" id="summary-total">$12.900</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ul class="trust-badges" aria-label="Beneficios del pedido">
+              <li class="badge-item">
+                <span class="badge-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </span>
+                <div class="badge-text">
+                  <span class="badge-label">Entrega express</span>
+                  <span class="badge-sub">24-48 horas en tu puerta</span>
+                </div>
+              </li>
+              <li class="badge-item">
+                <span class="badge-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                <div class="badge-text">
+                  <span class="badge-label">Pago 100% seguro</span>
+                  <span class="badge-sub">Datos encriptados SSL</span>
+                </div>
+              </li>
+              <li class="badge-item">
+                <span class="badge-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </span>
+                <div class="badge-text">
+                  <span class="badge-label">Hecho con dedicación</span>
+                  <span class="badge-sub">Receta tradicional familiar</span>
+                </div>
+              </li>
+              <li class="badge-item">
+                <span class="badge-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </span>
+                <div class="badge-text">
+                  <span class="badge-label">Calidad verificada</span>
+                  <span class="badge-sub">Certificación INVIMA</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="sidebar-decoration" aria-hidden="true">
+              <div class="deco-line"></div>
+              <span class="deco-text">Del campo a tu mesa</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- FORM -->
+        <form class="form" novalidate>
+          <header class="form-header">
+            <div class="form-header-top">
+              <span class="form-step-badge">Paso 1 de 1</span>
+            </div>
+            <h2 class="form-titulo">Completa tu pedido</h2>
+            <p class="form-subtitulo">Tus datos nos permiten coordinar la entrega directamente contigo. Sin intermediarios, sin complicaciones.</p>
+          </header>
+
+          <!-- DATOS PERSONALES -->
+          <fieldset class="form-section">
+            <legend class="form-legend">
+              <span class="legend-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              Datos personales
+            </legend>
+
+            <div class="form-group">
+              <label for="nombre" class="form-label">
+                Nombre completo
+                <span class="form-required" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                class="form-input"
+                placeholder="Ej: Juan Pérez"
+                autocomplete="name"
+                required
+                aria-required="true"
+              />
+              <span class="field-feedback" aria-live="polite"></span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono" class="form-label">
+                  Teléfono
+                  <span class="form-required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  class="form-input"
+                  placeholder="300 123 4567"
+                  pattern="[3]\d{9}"
+                  autocomplete="tel"
+                  required
+                  aria-required="true"
+                  inputmode="numeric"
+                />
+                <span class="field-feedback" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="correo" class="form-label">
+                  Correo electrónico
+                  <span class="form-required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="correo"
+                  name="correo"
+                  class="form-input"
+                  placeholder="correo@ejemplo.com"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                />
+                <span class="field-feedback" aria-live="polite"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ENTREGA -->
+          <fieldset class="form-section">
+            <legend class="form-legend">
+              <span class="legend-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </span>
+              Dirección de entrega
+            </legend>
+
+            <div class="form-group">
+              <label for="direccion" class="form-label">
+                Dirección completa
+                <span class="form-required" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="direccion"
+                name="direccion"
+                class="form-input"
+                placeholder="Calle 10 # 25-30, Barrio, Ciudad"
+                autocomplete="street-address"
+                required
+                aria-required="true"
+              />
+              <span class="field-feedback" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="instrucciones" class="form-label">
+                Instrucciones adicionales
+                <span class="form-optional">(opcional)</span>
+              </label>
+              <textarea
+                id="instrucciones"
+                name="instrucciones"
+                class="form-input form-textarea"
+                placeholder="Ej: Dejar en portería, edificio 3, apto 201. Timbre dañada."
+                rows="3"
+                aria-describedby="instrucciones-help"
+              ></textarea>
+              <span id="instrucciones-help" class="form-hint">Ayuda al domiciliario a encontrar tu ubicación más rápido.</span>
+            </div>
+          </fieldset>
+
+          <!-- PEDIDO -->
+          <fieldset class="form-section">
+            <legend class="form-legend">
+              <span class="legend-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              </span>
+              Detalle del pedido
+            </legend>
+
+            <div class="form-group">
+              <label for="cantidad" class="form-label">
+                Cantidad de unidades
+                <span class="form-required" aria-hidden="true">*</span>
+              </label>
+              <div class="quantity-control" role="group" aria-label="Seleccionar cantidad">
+                <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad" data-action="decrease">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+                <input
+                  type="number"
+                  id="cantidad"
+                  name="cantidad"
+                  class="form-input qty-input"
+                  min="1"
+                  max="100"
+                  value="1"
+                  required
+                  aria-required="true"
+                  inputmode="numeric"
+                />
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad" data-action="increase">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="metodo-pago" class="form-label">
+                Método de pago
+                <span class="form-required" aria-hidden="true">*</span>
+              </label>
+              <div class="select-wrapper">
+                <select id="metodo-pago" name="metodo-pago" class="form-input form-select" required aria-required="true">
+                  <option value="" disabled selected>Selecciona cómo prefieres pagar</option>
+                  <option value="efectivo">Efectivo contra entrega</option>
+                  <option value="transferencia">Transferencia bancaria</option>
+                  <option value="qr">Código QR / Nequi / Daviplata</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="order-confirmation" id="orderConfirmation" role="status">
+            <div class="confirmation-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="confirmation-title">¡Pedido recibido!</h3>
+            <p class="confirmation-desc">Te contactaremos pronto por WhatsApp o llamada para coordinar la entrega. Guarda este número: <strong>+57 300 123 4567</strong></p>
+          </div>
+
+          <footer class="form-footer">
+            <div class="footer-trust-row" aria-label="Garantías">
+              <span class="footer-trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Pago seguro
+              </span>
+              <span class="footer-trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Producto garantizado
+              </span>
+              <span class="footer-trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                Entrega rápida
+              </span>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              <span class="btn-spinner" aria-hidden="true"></span>
+              <span class="btn-text">Confirmar pedido</span>
+              <span class="btn-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+              <span class="btn-shimmer" aria-hidden="true"></span>
+            </button>
+
+            <p class="form-secure-note">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Tus datos están protegidos con encriptación SSL y no serán compartidos con terceros.
+            </p>
+          </footer>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>Q' Chorizos — Artesanales de verdad, desde 1998</p>
+        <div class="footer-links" aria-label="Enlaces adicionales">
+          <a href="#" class="footer-link">Política de privacidad</a>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <a href="#" class="footer-link">Términos de servicio</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- RATING MODAL — Aparece tras enviar el pedido -->
+    <div class="rating-modal" id="ratingModal" role="dialog" aria-modal="true" aria-labelledby="ratingTitle" aria-hidden="true">
+      <div class="rating-modal__backdrop" aria-hidden="true"></div>
+      <div class="rating-modal__content">
+
+        <div class="rating-modal__body">
+          <div class="rating-success" id="ratingSuccess">
+            <div class="rating-success__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h2 class="rating-success__title" id="ratingTitle">¡Pedido confirmado!</h2>
+            <p class="rating-success__desc">Te contactaremos pronto para coordinar la entrega.</p>
+          </div>
+
+          <div class="rating-stars">
+            <p class="rating-stars__prompt">¿Cómo calificas tu experiencia?</p>
+            <div class="rating-stars__group" role="radiogroup" aria-label="Calificación del 1 al 5">
+              <input type="radio" id="star5" name="rating" value="5" class="rating-stars__input">
+              <label for="star5" class="rating-stars__label" title="5 estrellas">★</label>
+              <input type="radio" id="star4" name="rating" value="4" class="rating-stars__input">
+              <label for="star4" class="rating-stars__label" title="4 estrellas">★</label>
+              <input type="radio" id="star3" name="rating" value="3" class="rating-stars__input">
+              <label for="star3" class="rating-stars__label" title="3 estrellas">★</label>
+              <input type="radio" id="star2" name="rating" value="2" class="rating-stars__input">
+              <label for="star2" class="rating-stars__label" title="2 estrellas">★</label>
+              <input type="radio" id="star1" name="rating" value="1" class="rating-stars__input">
+              <label for="star1" class="rating-stars__label" title="1 estrella">★</label>
+            </div>
+            <p class="rating-stars__feedback" id="ratingFeedback" aria-live="polite"></p>
+          </div>
+
+          <div class="rating-comment">
+            <label for="ratingComment" class="rating-comment__label">Comentario adicional <span class="rating-comment__optional">(opcional)</span></label>
+            <textarea id="ratingComment" class="rating-comment__input" placeholder="Cuéntanos cómo fue tu experiencia..." rows="2" maxlength="500"></textarea>
+            <span class="rating-comment__count" id="charCount">0/500</span>
+          </div>
+
+          <div class="rating-actions">
+            <button class="rating-actions__submit" id="ratingSubmit">Enviar calificación</button>
+            <button class="rating-actions__skip" id="ratingSkip">Ahora no</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>window.SUPABASE_URL="%VITE_SUPABASE_URL%";window.SUPABASE_KEY="%VITE_SUPABASE_KEY%";window.TABLE_NAME="Pedidos";</script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script type="module" src="../../js/supabase-config.js"></script>
+    <script type="module" src="../../js/form-ui.js"></script>
+    <script type="module" src="../../js/form-submission.js"></script>
+  </body>
+</html>

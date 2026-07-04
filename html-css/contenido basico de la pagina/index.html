@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chorizos artesanales colombianos con sabor auténtico. Tradición, calidad y sabor en cada bocado." />
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#c0392b"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="specific-sections.css" />
+  <link rel="stylesheet" href="componentes.css" />
+  <link rel="stylesheet" href="responsive-design.css" />
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="seccion-nosotros.css">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="../../fotos-proyectos/Logos/favicon.png">
+
+  <title>Q' Chorizos — Artesanales</title>
+</head>
+
+<body>
+
+  
+<a href="#contenido-principal" class="skip-to-content">
+  Saltar al contenido principal
+</a>
+
+<header class="navbar js-navbar" role="banner">
+  <div class="navbar__bg" aria-hidden="true"></div>
+  <div class="navbar__inner">
+
+    <a href="index.html" class="navbar__logo" aria-label="Q' Chorizos — Inicio">
+      <img
+        class="navbar__logo-img"
+        src="../../fotos-proyectos/Logos/nav-bar.png"
+        alt="Q' Chorizos"
+        decoding="async"
+        fetchpriority="high"
+        width="200"
+        height="96"
+      >
+    </a>
+
+    <button
+      class="navbar__toggle js-navbar-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="menu-principal"
+      aria-label="Abrir menú de navegación"
+    >
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+    </button>
+
+    <nav id="menu-principal" class="navbar__nav js-navbar-nav" aria-label="Navegación principal">
+      <ul class="navbar__links">
+        <li><a href="#inicio" class="navbar__link" aria-current="page">Inicio</a></li>
+        <li><a href="#productos" class="navbar__link">Productos</a></li>
+        <li><a href="#nosotros" class="navbar__link">Nosotros</a></li>
+        <li><a href="#contacto" class="navbar__link">Contacto</a></li>
+      </ul>
+      <a href="/html-css/formulario/formulario.html" class="navbar__cta">
+        Pedir ahora
+        <svg class="navbar__cta-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+  <main id="contenido-principal">
+
+    <!-- HERO CON CARRUSEL INTEGRADO -->
+    <section id="inicio" class="hero" aria-label="Presentación principal">
+      <div id="carruselPrincipal" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button>
+          <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="1" aria-label="Foto 2"></button>
+          <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="2" aria-label="Foto 3"></button>
+          <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="3" aria-label="Foto 4"></button>
+          <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="4" aria-label="Foto 5"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/fotos-proyectos/fotos-carrusel/foto1.jpg" alt="Chorizos artesanales recién preparados">
+            <div class="hero-carousel-overlay"></div>
+          </div>
+          <div class="carousel-item">
+            <img src="/fotos-proyectos/fotos-carrusel/foto2.jpg" alt="Selección de especias naturales">
+            <div class="hero-carousel-overlay"></div>
+          </div>
+          <div class="carousel-item">
+            <img src="/fotos-proyectos/fotos-carrusel/foto3.jpg" alt="Chorizos sobre la parrilla">
+            <div class="hero-carousel-overlay"></div>
+          </div>
+          <div class="carousel-item">
+            <img src="/fotos-proyectos/fotos-carrusel/foto4.jpg" alt="Preparación artesanal con ingredientes frescos">
+            <div class="hero-carousel-overlay"></div>
+          </div>
+          <div class="carousel-item">
+            <img src="/fotos-proyectos/fotos-carrusel/foto5.jpg" alt="Chorizos listos para disfrutar en familia">
+            <div class="hero-carousel-overlay"></div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselPrincipal" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselPrincipal" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+
+      <div class="hero-content">
+        <span class="hero-badge">100% Artesanal</span>
+        <h1>Chorizos con alma <span>colombiana</span></h1>
+        <p class="hero-text">
+          Recetas tradicionales elaboradas con carne de primera y especias seleccionadas.
+        </p>
+        <div class="hero-actions">
+          <a href="#productos" class="btn btn-primario">Ver productos</a>
+          <a href="#nosotros" class="btn btn-secundario">Conócenos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" aria-label="Productos destacados">
+      <h2>Productos destacados</h2>
+      <p class="section-subtitle">Tres variedades pensadas para cada gusto.</p>
+
+      <div class="productos-grid">
+
+        <article class="card-producto">
+          <div class="card-producto-imagen">
+            <img src="/fotos-proyectos/chorizoTradicional.png" alt="Chorizo tradicional artesanal" loading="lazy">
+            <span class="card-badge card-badge-popular">Más vendido</span>
+          </div>
+          <div class="card-producto-cuerpo">
+            <h3>Chorizo tradicional</h3>
+            <p>El clásico que no falla. Sabor auténtico en cada bocado, preparado con la receta original.</p>
+          </div>
+          <div class="card-producto-footer">
+            <span class="card-producto-precio">$25.000</span>
+            <button
+              class="btn btn-comprar"
+              data-bs-toggle="modal"
+              data-bs-target="#modalProducto"
+              data-producto="Chorizo tradicional"
+              data-precio="$25.000"
+              data-imagen="/fotos-proyectos/chorizoTradicional.png"
+              data-descripcion="El sabor de siempre que conquista a todos. Elaborado con carne de cerdo seleccionada y especias naturales."
+              data-peso="350g"
+              data-cantidad="5 unidades"
+              data-carne="Cerdo"
+              data-picante="Suave"
+              data-conservacion="Refrigeración 0-4°C"
+              data-contexto="Ideal para asados dominicales y desayunos con arepa."
+              aria-label="Ver detalles y comprar Chorizo tradicional">
+              Comprar
+            </button>
+          </div>
+        </article>
+
+        <article class="card-producto">
+          <div class="card-producto-imagen">
+            <img src="/fotos-proyectos/chorizoPicante.jpg" alt="Chorizo picante artesanal" loading="lazy">
+            <span class="card-badge card-badge-spicy"><span aria-hidden="true">🌶</span> Picante</span>
+          </div>
+          <div class="card-producto-cuerpo">
+            <h3>Chorizo picante</h3>
+            <p>Para los que se atreven. Intensidad y carácter en cada mordida con un toque de ají.</p>
+          </div>
+          <div class="card-producto-footer">
+            <span class="card-producto-precio">$23.000</span>
+            <button
+              class="btn btn-comprar"
+              data-bs-toggle="modal"
+              data-bs-target="#modalProducto"
+              data-producto="Chorizo picante"
+              data-precio="$23.000"
+              data-imagen="/fotos-proyectos/chorizoPicante.jpg"
+              data-descripcion="Una mezcla audaz de carnes selectas con ají y especias picantes que despiertan todos los sentidos."
+              data-peso="350g"
+              data-cantidad="5 unidades"
+              data-carne="Cerdo y res"
+              data-picante="Alto"
+              data-conservacion="Refrigeración 0-4°C"
+              data-contexto="Perfecto para quienes buscan intensidad y sabor con carácter."
+              aria-label="Ver detalles y comprar Chorizo picante">
+              Comprar
+            </button>
+          </div>
+        </article>
+
+        <article class="card-producto">
+          <div class="card-producto-imagen">
+            <img src="/fotos-proyectos/chorizoPremium.jpg" alt="Chorizo premium artesanal" loading="lazy">
+            <span class="card-badge card-badge-premium">✨ Premium</span>
+          </div>
+          <div class="card-producto-cuerpo">
+            <h3>Chorizo premium</h3>
+            <p>Experiencia gourmet. Ingredientes selectos para paladares exigentes.</p>
+          </div>
+          <div class="card-producto-footer">
+            <span class="card-producto-precio">$30.000</span>
+            <button
+              class="btn btn-comprar"
+              data-bs-toggle="modal"
+              data-bs-target="#modalProducto"
+              data-producto="Chorizo premium"
+              data-precio="$30.000"
+              data-imagen="/fotos-proyectos/chorizoPremium.jpg"
+              data-descripcion="Carne premium de primera corte, marinada con hierbas finas y especias importadas."
+              data-peso="400g"
+              data-cantidad="4 unidades"
+              data-carne="Cerdo premium"
+              data-picante="Ninguno"
+              data-conservacion="Refrigeración 0-4°C"
+              data-contexto="La elección perfecta para cenas especiales y momentos que merecen lo mejor."
+              aria-label="Ver detalles y comprar Chorizo premium">
+              Comprar
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- NOSOTROS — Storytelling visual -->
+    <section id="nosotros" aria-label="Nuestra historia y equipo" class="seccion-nosotros">
+
+      <!-- Header emocional -->
+      <div class="nosotros-header">
+        <span class="nosotros-badge">Nuestra historia</span>
+        <h2 class="nosotros-titulo">Hecho por personas,<br>para personas</h2>
+        <p class="nosotros-subtitulo">
+          Detrás de cada chorizo hay manos que cortan, mezclan y embuten con el mismo cuidado
+          que si lo hicieran para su propia mesa.
+        </p>
+      </div>
+
+      <!-- Split principal: Imagen equipo + Narrativa -->
+      <div class="nosotros-split">
+        <div class="nosotros-split-imagen">
+          <img data-parallax="nosotros" data-parallax-strength="14" src="/fotos-proyectos/fotos-nosotros/equipo-de-trabajo.png" alt="Equipo de trabajo Que chorizos con uniforme y logo" loading="lazy">
+          <div class="nosotros-split-imagen-caption">
+            <span>Nuestro equipo</span>
+            <small>Bogotá, Colombia</small>
+          </div>
+        </div>
+
+        <div class="nosotros-split-texto">
+          <h3 class="nosotros-split-titulo">No somos una fábrica.<br>Somos un taller.</h3>
+          <p>
+            Q' Chorizos nació de una decisión simple: devolverle al chorizo lo que el tiempo
+            y la industria le quitaron — el tiempo de hacerlo bien.
+          </p>
+          <p>
+            Cada mañana llegamos a nuestro taller en Bogotá con un solo objetivo: que quien
+            pruebe nuestro chorizo sienta que está comiendo algo real, hecho por alguien que
+            sabe lo que hace.
+          </p>
+          <div class="nosotros-split-firma">
+            <strong>— Equipo Q' Chorizos</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valores / Pilares -->
+      <div class="nosotros-valores">
+        <h3 class="nosotros-valores-titulo">Lo que nos define</h3>
+        <div class="nosotros-valores-grid">
+
+          <div class="valor-card">
+            <div class="valor-card-icono">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h4>Artesanía real</h4>
+            <p>
+              Sin atajos ni máquinas de alta velocidad. Cada lote se prepara a mano,
+              respetando los tiempos de maduración y el equilibrio de especias.
+            </p>
+          </div>
+
+          <div class="valor-card">
+            <div class="valor-card-icono">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Ingredientes honestos</h4>
+            <p>
+              Carne de primera, sal, pimienta, ají y paciencia. Nada de rellenos,
+              conservantes ni sabores artificiales. Lo que ves es lo que comes.
+            </p>
+          </div>
+
+          <div class="valor-card">
+            <div class="valor-card-icono">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h4>Cercanía humana</h4>
+            <p>
+              No hay un call center detrás de este pedido. Somos nosotros quienes
+              empacamos, etiquetamos y despachamos cada orden con cuidado personal.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Galería visual: Proceso + Instalaciones + Empaque -->
+      <div class="nosotros-galeria">
+        <div class="nosotros-galeria-item nosotros-galeria-item--grande">
+          <img data-parallax="nosotros" data-parallax-strength="10" src="/fotos-proyectos/fotos-nosotros/proceso-artesanal.png" alt="Manos trabajando el chorizo artesanalmente" loading="lazy">
+          <div class="nosotros-galeria-overlay">
+            <span class="nosotros-galeria-label">Proceso</span>
+            <h4>El arte de embutir</h4>
+          </div>
+        </div>
+
+        <div class="nosotros-galeria-item nosotros-galeria-item--alto">
+          <img data-parallax="nosotros" data-parallax-strength="8" src="/fotos-proyectos/fotos-nosotros/instalaciones.png" alt="Instalaciones internas del taller Que chorizos" loading="lazy">
+          <div class="nosotros-galeria-overlay">
+            <span class="nosotros-galeria-label">Instalaciones</span>
+            <h4>Nuestro taller</h4>
+          </div>
+        </div>
+
+        <div class="nosotros-galeria-item nosotros-galeria-item--ancho">
+          <img data-parallax="nosotros" data-parallax-strength="8" src="/fotos-proyectos/fotos-nosotros/empaque.png" alt="Empaque cuidadoso de pedidos de chorizos" loading="lazy">
+          <div class="nosotros-galeria-overlay">
+            <span class="nosotros-galeria-label">Empaque</span>
+            <h4>Llega fresco a tu mesa</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cierre emocional -->
+      <div class="nosotros-cierre">
+        <blockquote class="nosotros-cita">
+          "Hacemos chorizos como si fuera para nosotros mismos,<br>
+          porque en el fondo, lo es."
+        </blockquote>
+        <a href="#productos" class="btn btn-primario">Descubre nuestros chorizos</a>
+      </div>
+
+    </section>
+
+    <!-- EXPERIENCIAS -->
+    <section id="experiencias" aria-label="Formas de disfrutarlos">
+      <h2>Formas de disfrutarlos</h2>
+      <p class="section-subtitle">El momento perfecto para cada ocasión.</p>
+
+      <div class="experiencias-grid">
+
+        <article class="card-experiencia">
+          <img src="/fotos-proyectos/asadoAmigos.png" alt="Asado al aire libre con amigos disfrutando chorizos" loading="lazy">
+          <div class="card-experiencia-overlay">
+            <h3>Asado con amigos</h3>
+          </div>
+        </article>
+
+        <article class="card-experiencia">
+          <img src="/fotos-proyectos/desayunoFamiliar.png" alt="Desayuno familiar con chorizos artesanales" loading="lazy">
+          <div class="card-experiencia-overlay">
+            <h3>Desayuno familiar</h3>
+          </div>
+        </article>
+
+        <article class="card-experiencia">
+          <img src="/fotos-proyectos/picadaFamiliar.png" alt="Picada familiar con chorizos y acompañamientos" loading="lazy">
+          <div class="card-experiencia-overlay">
+            <h3>Picada</h3>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contacto" class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-col footer-col--brand">
+            <a href="#inicio" class="footer-logo" aria-label="Q' Chorizos - Ir al inicio">Q' <span>Chorizos</span></a>
+            <span class="footer-brand-rule" aria-hidden="true"></span>
+            <p class="footer-tagline">Tradición colombiana en cada bocado.</p>
+          </div>
+
+          <nav class="footer-col footer-col--nav" aria-label="Navegación del pie de página">
+            <h5 class="footer-heading">Navegación</h5>
+            <ul class="footer-nav">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#productos">Productos</a></li>
+              <li><a href="#nosotros">Nosotros</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-col footer-col--contacto">
+            <h5 class="footer-heading">Contacto</h5>
+            <ul class="footer-contact">
+              <li class="footer-contact-item">
+                <svg class="footer-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                Bogotá, Colombia
+              </li>
+              <li class="footer-contact-item">
+                <svg class="footer-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                <a href="mailto:info@qchorizos.com">info@qchorizos.com</a>
+              </li>
+              <li class="footer-contact-item">
+                <svg class="footer-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                <a href="tel:+573001234567">+57 300 123 4567</a>
+              </li>
+              <li class="footer-contact-item">
+                <svg class="footer-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                Lun-Sáb: 8:00 AM - 6:00 PM
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-col--social">
+            <h5 class="footer-heading">Síguenos</h5>
+            <div class="footer-social">
+              <a href="https://instagram.com/qchorizos" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </a>
+              <a href="https://facebook.com/qchorizos" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <p class="footer-copyright">© 2026 <span>Q' Chorizos</span>. Todos los derechos reservados.</p>
+          <div class="footer-legal" aria-label="Enlaces legales">
+            <a href="#" class="footer-legal-link">Términos y condiciones</a>
+            <a href="#" class="footer-legal-link">Política de privacidad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DE PRODUCTO -->
+  <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-labelledby="modalTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitulo"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="modal-producto-top text-center">
+            <img id="modalImagen" class="modal-imagen-producto" src="" alt="">
+            <p id="modalPrecio" class="modal-precio"></p>
+            <p id="modalDescripcion" class="modal-descripcion"></p>
+          </div>
+
+          <div class="modal-contexto">
+            <p id="modalContexto" class="modal-contexto-texto"></p>
+          </div>
+
+          <div class="modal-especificaciones">
+            <h6 class="modal-spec-title">Detalles del producto</h6>
+            <table class="modal-spec-table">
+              <tbody>
+                <tr>
+                  <td class="spec-label">Peso</td>
+                  <td class="spec-value" id="modalPeso"></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Cantidad</td>
+                  <td class="spec-value" id="modalCantidad"></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Tipo de carne</td>
+                  <td class="spec-value" id="modalCarne"></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Nivel de picante</td>
+                  <td class="spec-value" id="modalPicante"></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Conservación</td>
+                  <td class="spec-value" id="modalConservacion"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="modal-confianza">
+            <div class="confianza-item">
+              <span class="confianza-icon">✓</span>
+              <span>100% artesanal</span>
+            </div>
+            <div class="confianza-item">
+              <span class="confianza-icon">✓</span>
+              <span>Sin conservantes</span>
+            </div>
+            <div class="confianza-item">
+              <span class="confianza-icon">✓</span>
+              <span>Preparación fresca</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secundario" data-bs-dismiss="modal">
+            Seguir viendo
+          </button>
+
+          <a href="/html-css/formulario/formulario.html" class="btn btn-primario" id="modalComprarBtn">
+            Continuar pedido
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="modal-producto.js"></script>
+<script type="module" src="scroll-animations.js"></script>
+<script type="module" src="../../js/navbar.js"></script>
+
+</body>
+</html>
