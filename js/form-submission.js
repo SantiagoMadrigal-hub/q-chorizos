@@ -121,6 +121,13 @@ document.addEventListener('DOMContentLoaded', function() {
     ratingSubmit.classList.add('is-loading');
 
     try {
+      if (!window.__supabaseReady || !window.supabaseClient) {
+        console.log('Simulando feedback (Supabase no configurado):', { ratingValue, comment });
+        await new Promise(function(r) { setTimeout(r, 400); });
+        showSentState();
+        return;
+      }
+
       var result = await window.supabaseClient.rpc('insertar_feedback', {
         p_calificacion: ratingValue,
         p_comentario: comment || '',
@@ -222,7 +229,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var cantidad = parseInt(document.getElementById('cantidad').value) || 1;
     var metodoPago = document.getElementById('metodo-pago').value;
 
-    if (!nombre || !telefono || !correo || !direccion || !cantidad || !metodoPago) {
+    var productoForm = document.getElementById('producto');
+    var productoVal = productoForm ? productoForm.value : '';
+
+    if (!nombre || !telefono || !correo || !direccion || !productoVal || !cantidad || !metodoPago) {
       showFeedback('error', 'Por favor completa todos los campos obligatorios.');
       return;
     }
@@ -236,12 +246,24 @@ document.addEventListener('DOMContentLoaded', function() {
       direccion_entrega: direccion,
       instrucciones: instrucciones || '',
       cantidad: cantidad,
-      metodo_pago: metodoPago
+      metodo_pago: metodoPago,
+      producto: (document.getElementById('producto') && document.getElementById('producto').value) || window._selectedProducto || 'Chorizos artesanales',
+      precio_unitario: window._selectedPrecio || 12900
     };
 
     savedPedido = pedido;
 
     try {
+      if (!window.__supabaseReady || !window.supabaseClient) {
+        console.log('Simulando env\u00edo (Supabase no configurado):', pedido);
+        await new Promise(function(r) { setTimeout(r, 800); });
+
+        form.style.display = 'none';
+        confirmation.classList.add('is-visible');
+        setTimeout(function() { openRatingModal(); }, 800);
+        return;
+      }
+
       var result = await window.supabaseClient.rpc('insertar_pedido', {
         p_nombre_completo: pedido.nombre_completo,
         p_telefono: pedido.telefono,
@@ -249,7 +271,9 @@ document.addEventListener('DOMContentLoaded', function() {
         p_direccion_entrega: pedido.direccion_entrega,
         p_instrucciones: pedido.instrucciones || '',
         p_cantidad: pedido.cantidad,
-        p_metodo_pago: pedido.metodo_pago
+        p_metodo_pago: pedido.metodo_pago,
+        p_producto: pedido.producto,
+        p_precio_unitario: pedido.precio_unitario
       });
 
       if (result.error) throw result.error;
@@ -265,6 +289,20 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (err) {
       var errorMsg = err.message || err.error_description || 'Error de conexión. Intenta de nuevo.';
       showFeedback('error', errorMsg);
+
+      /* Add retry button */
+      var feedbackEl = document.getElementById('order-feedback');
+      var retryBtn = feedbackEl.querySelector('.order-feedback-retry');
+      if (!retryBtn) {
+        retryBtn = document.createElement('button');
+        retryBtn.className = 'order-feedback-retry';
+        retryBtn.textContent = 'Reintentar';
+        retryBtn.type = 'button';
+        retryBtn.addEventListener('click', function() {
+          form.dispatchEvent(new Event('submit'));
+        });
+        feedbackEl.appendChild(retryBtn);
+      }
     } finally {
       setSubmitting(false);
     }

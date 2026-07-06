@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Elementos a animar en la sección nosotros
+  // Elementos a animar
   const animatables = document.querySelectorAll(
-    '.nosotros-header, .nosotros-split, .valor-card, .nosotros-galeria-item, .nosotros-cierre'
+    '.section-heading, .nosotros-header, .nosotros-split, .valor-card, .nosotros-galeria-item, .nosotros-cierre, .card-producto, .card-experiencia, .testimonio-card, .faq-item, .experiencias-cta, .trust-counter, .form-section, .form-footer, .trust-badges'
   );
 
   animatables.forEach(function(el) {
@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let latestScrollY = window.scrollY || 0;
     let rafId = null;
 
-    function clamp(v, min, max) {
+    const clamp = function(v, min, max) {
       return Math.max(min, Math.min(max, v));
-    }
+    };
 
-    function applyScrollParallax() {
+    const applyScrollParallax = function() {
       rafId = null;
       const viewportH = window.innerHeight || 800;
 
@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         img.style.setProperty('--parallax-y', y.toFixed(2) + 'px');
       });
-    }
+    };
 
-    function scheduleParallax() {
-      if (rafId != null) return;
+    const scheduleParallax = function() {
+      if (rafId !== null) return;
       rafId = window.requestAnimationFrame(applyScrollParallax);
-    }
+    };
 
     window.addEventListener('scroll', function() {
       latestScrollY = window.scrollY || 0;

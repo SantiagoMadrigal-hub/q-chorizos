@@ -25,11 +25,41 @@ a {
   text-decoration: none;
 }
 
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2.5px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  z-index: 1000;
+  background: var(--color-focus);
+  color: #fff;
+  padding: var(--space-sm) var(--space-lg);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  transition: top var(--transition-fast);
+}
+
+.skip-to-content:focus-visible {
+  top: 0;
+  outline-color: #fff;
+}
+
 ul {
   list-style: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
   line-height: 1.2;
   font-weight: 700;
   color: var(--color-text);
@@ -122,12 +152,7 @@ section > h2 {
 .hero-carousel-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.45) 50%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55));
   z-index: 1;
 }
 
@@ -145,7 +170,7 @@ section > h2 {
 
 .hero-badge {
   display: inline-block;
-  background: rgba(192, 57, 43, 0.9);
+  background: rgba(var(--color-brand-rgb), 0.9);
   color: var(--color-text-inverse);
   font-size: var(--text-sm);
   font-weight: 600;
@@ -156,6 +181,7 @@ section > h2 {
 }
 
 .hero h1 {
+  font-family: var(--font-display);
   color: var(--color-text-inverse);
   max-width: 700px;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
@@ -251,15 +277,45 @@ section > h2 {
   background: #25D366;
   color: #fff;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  box-shadow:
+    0 4px 16px rgba(37, 211, 102, 0.45),
+    0 0 0 2px rgba(255, 255, 255, 0.15);
   transition: transform 0.2s, box-shadow 0.2s;
+}
+.whatsapp-btn svg {
+  display: block;
 }
 .whatsapp-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  box-shadow:
+    0 6px 24px rgba(37, 211, 102, 0.55),
+    0 0 0 2px rgba(255, 255, 255, 0.25);
   color: #fff;
 }
 .whatsapp-btn:active {
   transform: scale(0.95);
 }
+.whatsapp-btn:focus-visible {
+  outline-color: var(--color-focus);
+  outline-offset: 4px;
+}
+
+/* ── Scroll reveal ── */
+.reveal-on-scroll,
+.fade-in-up {
+  will-change: transform, opacity;
+}
+
+/* ── Accesibilidad: reducir animaciones ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
 

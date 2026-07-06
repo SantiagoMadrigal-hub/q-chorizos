@@ -1,0 +1,161 @@
+@page {
+  margin: 1.5cm;
+  size: A4;
+}
+
+body {
+  font: 11pt/1.5 Georgia, 'Times New Roman', serif;
+  color: #000;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  page-break-after: avoid;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+p, li, blockquote {
+  orphans: 3;
+  widows: 3;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a[href^="http"]::after {
+  content: " (" attr(href) ")";
+  font-size: 0.8em;
+  color: #555;
+}
+
+img {
+  max-width: 100% !important;
+  page-break-inside: avoid;
+}
+
+/* ── Hide interactive / non-essential ── */
+.navbar,
+.navbar__toggle,
+.whatsapp-btn,
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators,
+.btn,
+.btn-comprar,
+.newsletter-form,
+.cookie-banner,
+footer .footer-social,
+footer .footer-contact,
+footer .footer-trust,
+footer .footer-legal,
+footer .footer-bottom-bar {
+  display: none !important;
+}
+
+/* ── Header ── */
+.navbar__logo {
+  display: block;
+  margin-bottom: 1cm;
+}
+
+.navbar__logo-img {
+  max-height: 60px;
+}
+
+/* ── Sections ── */
+section {
+  padding: 1cm 0;
+  max-width: 100%;
+  page-break-inside: avoid;
+}
+
+.hero {
+  min-height: auto;
+  padding: 0;
+}
+
+.hero-carousel,
+.hero-carousel-overlay {
+  display: none;
+}
+
+.hero-content {
+  position: static;
+  padding: 1cm 0;
+  text-align: left;
+  max-width: 100%;
+}
+
+.hero h1 {
+  color: #000;
+  text-shadow: none;
+  font-size: 24pt;
+}
+
+.hero-text {
+  color: #333;
+}
+
+.hero-badge {
+  background: none;
+  color: #c0392b;
+  padding: 0;
+  font-weight: 700;
+}
+
+/* ── Grids → stacked ── */
+.productos-grid,
+.experiencias-grid,
+.testimonios-grid,
+.nosotros-valores-grid,
+.nosotros-galeria,
+.faq-lista {
+  display: block;
+}
+
+.card-producto,
+.card-experiencia,
+.testimonio-card,
+.valor-card,
+.nosotros-galeria-item,
+.faq-item {
+  page-break-inside: avoid;
+  margin-bottom: 0.5cm;
+  border: 1px solid #ddd;
+  padding: 0.3cm;
+}
+
+.nosotros-split {
+  display: block;
+}
+
+.nosotros-split-imagen-caption {
+  position: static;
+  padding: 0.2cm 0;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid #ccc;
+  padding-top: 0.5cm;
+  font-size: 9pt;
+  color: #555;
+}
+
+.footer-inner {
+  display: block;
+}
+
+.footer-tagline {
+  max-width: 100%;
+}
+
+.footer-col {
+  margin-bottom: 0.3cm;
+}
+
+.footer-contact-item a {
+  text-decoration: none;
+}

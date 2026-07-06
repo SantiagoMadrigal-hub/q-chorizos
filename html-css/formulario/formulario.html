@@ -13,11 +13,11 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Pedido — Q' Chorizos | Chorizos Artesanales Premium" />
-    <meta property="og:description" content="Realiza tu pedido de chorizos artesanales Q' Chorizos. Producto premium, entrega rápida y pago seguro." />
+    <meta property="og:description" content="Realiza tu pedido de chorizos artesanales Q' Chorizos. Ingredientes naturales, entrega rápida en Bogotá y pago seguro." />
     <meta property="og:url" content="https://qchorizos.netlify.app/html-css/formulario/formulario.html" />
-    <meta property="og:image" content="https://qchorizos.netlify.app/fotos-proyectos/Logos/favicon.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
+    <meta property="og:image" content="https://qchorizos.netlify.app/fotos-proyectos/fotos-carrusel/foto1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
     <meta property="og:locale" content="es_CO" />
     <meta property="og:site_name" content="Q' Chorizos" />
 
@@ -25,14 +25,15 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pedido — Q' Chorizos | Chorizos Artesanales Premium" />
     <meta name="twitter:description" content="Realiza tu pedido de chorizos artesanales Q' Chorizos." />
-    <meta name="twitter:image" content="https://qchorizos.netlify.app/fotos-proyectos/Logos/favicon.png" />
+    <meta name="twitter:image" content="https://qchorizos.netlify.app/fotos-proyectos/fotos-carrusel/foto1.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="estilos-base.css" />
     <link rel="stylesheet" href="estilos-interaccion.css" />
+    <script type="module" src="../contenido basico de la pagina/scroll-animations.js"></script>
 
     
   </head>
@@ -40,13 +41,7 @@
   <body>
     <header class="site-header">
       <div class="site-header-inner">
-        <span class="site-logo" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l3 3 5-5"/></svg>
-        </span>
-        <div class="brand-group">
-          <span class="site-name">Q' Chorizos</span>
-          <span class="brand-tagline">Artesanales desde 1998</span>
-        </div>
+        <img class="site-logo" src="../../fotos-proyectos/Logos/logo-lockup-dark.svg" alt="Q' Chorizos" width="240" height="65" />
       </div>
       <div class="header-trust-row" aria-label="Indicadores de confianza">
         <span class="trust-pill">
@@ -78,13 +73,13 @@
                 Artesanal Premium
               </span>
 
-              <h1 class="sidebar-title">Chorizos<br /><em>artesanales</em></h1>
-              <p class="sidebar-desc">Receta familiar de tres generaciones. Carne seleccionada, especias naturales y ahumado lento con madera de roble.</p>
+              <h1 class="sidebar-title" id="sidebar-title">Chorizos<br /><em>artesanales</em></h1>
+              <p class="sidebar-desc" id="sidebar-desc">Receta familiar de tres generaciones. Carne seleccionada, especias naturales y ahumado lento con madera de roble.</p>
 
               <div class="product-price-block">
                 <div class="product-price">
-                  <span class="price-amount">$12.900</span>
-                  <span class="price-unit">/ unidad</span>
+                  <span class="price-amount" id="price-amount">$12.900</span>
+                  <span class="price-unit">/ paquete</span>
                 </div>
                 <div class="order-summary" aria-label="Resumen del pedido">
                   <div class="summary-row">
@@ -93,7 +88,7 @@
                   </div>
                   <div class="summary-row summary-total">
                     <span class="summary-label">Total estimado</span>
-                    <span class="summary-total-value" id="summary-total">$12.900</span>
+                    <span class="summary-total-value" id="summary-total">$0</span>
                   </div>
                 </div>
               </div>
@@ -148,9 +143,6 @@
         <!-- FORM -->
         <form class="form" novalidate>
           <header class="form-header">
-            <div class="form-header-top">
-              <span class="form-step-badge">Paso 1 de 1</span>
-            </div>
             <h2 class="form-titulo">Completa tu pedido</h2>
             <p class="form-subtitulo">Tus datos nos permiten coordinar la entrega directamente contigo. Sin intermediarios, sin complicaciones.</p>
           </header>
@@ -159,7 +151,7 @@
           <fieldset class="form-section">
             <legend class="form-legend">
               <span class="legend-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><path d="M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
               </span>
               Datos personales
             </legend>
@@ -193,7 +185,7 @@
                   id="telefono"
                   name="telefono"
                   class="form-input"
-                  placeholder="300 123 4567"
+                  placeholder="+57 300 123 4567"
                   pattern="[3]\d{9}"
                   autocomplete="tel"
                   required
@@ -227,7 +219,7 @@
           <fieldset class="form-section">
             <legend class="form-legend">
               <span class="legend-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </span>
               Dirección de entrega
             </legend>
@@ -261,9 +253,11 @@
                 class="form-input form-textarea"
                 placeholder="Ej: Dejar en portería, edificio 3, apto 201. Timbre dañada."
                 rows="3"
-                aria-describedby="instrucciones-help"
+                maxlength="200"
+                aria-describedby="instrucciones-help instrucciones-count"
               ></textarea>
               <span id="instrucciones-help" class="form-hint">Ayuda al domiciliario a encontrar tu ubicación más rápido.</span>
+              <span id="instrucciones-count" class="form-charcount" aria-live="polite">0/200</span>
             </div>
           </fieldset>
 
@@ -271,18 +265,33 @@
           <fieldset class="form-section">
             <legend class="form-legend">
               <span class="legend-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
               </span>
               Detalle del pedido
             </legend>
 
             <div class="form-group">
-              <label for="cantidad" class="form-label">
-                Cantidad de unidades
+              <label for="producto" class="form-label">
+                Producto
                 <span class="form-required" aria-hidden="true">*</span>
               </label>
-              <div class="quantity-control" role="group" aria-label="Seleccionar cantidad">
-                <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad" data-action="decrease">
+              <div class="select-wrapper">
+                <select id="producto" name="producto" class="form-input form-select" required aria-required="true">
+                  <option value="" disabled selected>Selecciona el producto</option>
+                  <option value="Chorizo tradicional">Chorizo tradicional</option>
+                  <option value="Chorizo picante">Chorizo picante</option>
+                  <option value="Chorizo premium">Chorizo premium</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cantidad" class="form-label">
+                Cantidad de paquetes
+                <span class="form-required" aria-hidden="true">*</span>
+              </label>
+              <div class="quantity-control" role="group" aria-label="Seleccionar paquetes">
+                <button type="button" class="qty-btn qty-minus" aria-label="Reducir paquetes" data-action="decrease">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </button>
                 <input
@@ -297,7 +306,7 @@
                   aria-required="true"
                   inputmode="numeric"
                 />
-                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad" data-action="increase">
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar paquetes" data-action="increase">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </button>
               </div>
@@ -328,20 +337,6 @@
           </div>
 
           <footer class="form-footer">
-            <div class="footer-trust-row" aria-label="Garantías">
-              <span class="footer-trust-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Pago seguro
-              </span>
-              <span class="footer-trust-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Producto garantizado
-              </span>
-              <span class="footer-trust-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                Entrega rápida
-              </span>
-            </div>
 
             <button type="submit" class="btn-submit">
               <span class="btn-spinner" aria-hidden="true"></span>
@@ -423,6 +418,36 @@
     <script type="module" src="../../js/supabase-config.js"></script>
     <script type="module" src="../../js/form-ui.js"></script>
     <script type="module" src="../../js/form-submission.js"></script>
+
+    <!-- Cookie consent -->
+    <aside class="cookie-banner" id="cookieBanner" role="alert" aria-label="Aviso de cookies">
+      <div class="cookie-banner-inner">
+        <p class="cookie-banner-texto">
+          Usamos cookies técnicas para mejorar tu experiencia en el sitio.
+          <a href="#" aria-label="Leer política de privacidad">Más información</a>.
+        </p>
+        <div class="cookie-banner-acciones">
+          <button class="cookie-btn cookie-btn-aceptar" id="cookieAceptar" type="button">Aceptar</button>
+        </div>
+      </div>
+    </aside>
+
+    <script>
+    (function() {
+      if (localStorage.getItem('cookieConsent') === 'true') return;
+      var banner = document.getElementById('cookieBanner');
+      var btn = document.getElementById('cookieAceptar');
+      if (!banner || !btn) return;
+      requestAnimationFrame(function() {
+        banner.classList.add('is-visible');
+      });
+      btn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'true');
+        banner.classList.remove('is-visible');
+        setTimeout(function() { banner.remove(); }, 500);
+      });
+    })();
+    </script>
 
     <!-- WhatsApp -->
     <a class="whatsapp-btn" href="https://wa.me/573242989656?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20chorizos%20artesanales%20🇨🇴" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
