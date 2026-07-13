@@ -6,19 +6,22 @@ export default defineConfig(async ({ mode }) => {
 
   const plugins = [];
 
-  const { default: viteCompression } = await import('vite-plugin-compression');
-  plugins.push(
-    viteCompression({
-      algorithm: 'brotliCompress',
-      ext: '.br',
-      threshold: 1024
-    }),
-    viteCompression({
-      algorithm: 'gzip',
-      ext: '.gz',
-      threshold: 1024
-    })
-  );
+  // Vercel already compresses responses (gzip/brotli) — disable plugin in production
+  if (mode !== 'production') {
+    const { default: viteCompression } = await import('vite-plugin-compression');
+    plugins.push(
+      viteCompression({
+        algorithm: 'brotliCompress',
+        ext: '.br',
+        threshold: 1024
+      }),
+      viteCompression({
+        algorithm: 'gzip',
+        ext: '.gz',
+        threshold: 1024
+      })
+    );
+  }
 
   if (mode === 'analyze') {
     const { visualizer } = await import('rollup-plugin-visualizer');
