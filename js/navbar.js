@@ -2,13 +2,13 @@
 (function() {
   'use strict';
 
-  var navbar = document.querySelector('.js-navbar');
-  var toggle = document.querySelector('.js-navbar-toggle');
-  var nav = document.querySelector('.js-navbar-nav');
+  const navbar = document.querySelector('.js-navbar');
+  const toggle = document.querySelector('.js-navbar-toggle');
+  const nav = document.querySelector('.js-navbar-nav');
 
   /* ── Scroll-aware: transparent at top ── */
   function updateNavbarState() {
-    if (!navbar) return;
+    if (!navbar) {return;}
     if (window.scrollY < 40) {
       navbar.classList.add('navbar--top');
     } else {
@@ -21,7 +21,7 @@
   /* ── Mobile menu toggle ── */
   if (toggle && nav) {
     toggle.addEventListener('click', function() {
-      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!isOpen));
       nav.classList.toggle('is-open');
       document.body.style.overflow = isOpen ? '' : 'hidden';

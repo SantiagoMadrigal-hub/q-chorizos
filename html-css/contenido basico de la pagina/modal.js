@@ -1,19 +1,19 @@
 (function() {
   'use strict';
 
-  var modal = document.getElementById('modalProducto');
-  if (!modal) return;
+  const modal = document.getElementById('modalProducto');
+  if (!modal) {return;}
 
-  var closeBtns = modal.querySelectorAll('[data-modal-close]');
-  var backdrop = null;
-  var previousFocus = null;
-  var focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+  const closeBtns = modal.querySelectorAll('[data-modal-close]');
+  let backdrop = null;
+  let previousFocus = null;
+  const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
   function trapFocus(e) {
-    var focusable = modal.querySelectorAll(focusableSelector);
-    if (!focusable.length) return;
-    var first = focusable[0];
-    var last = focusable[focusable.length - 1];
+    const focusable = modal.querySelectorAll(focusableSelector);
+    if (!focusable.length) {return;}
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
     if (e.key === 'Tab') {
       if (e.shiftKey && document.activeElement === first) {
         e.preventDefault();
@@ -40,8 +40,8 @@
 
     document.body.style.overflow = 'hidden';
 
-    var img = document.getElementById('modalImagen');
-    var webpSrc = document.getElementById('modalImagenWebp');
+    const img = document.getElementById('modalImagen');
+    const webpSrc = document.getElementById('modalImagenWebp');
     if (img && trigger) {
       img.src = trigger.dataset.imagen || '';
       img.alt = trigger.dataset.producto || '';
@@ -50,7 +50,7 @@
       }
     }
 
-    var fields = [
+    const fields = [
       { id: 'modalTitulo', key: 'producto' },
       { id: 'modalPrecio', key: 'precio' },
       { id: 'modalDescripcion', key: 'descripcion' },
@@ -63,11 +63,11 @@
     ];
 
     fields.forEach(function(f) {
-      var el = document.getElementById(f.id);
-      if (el) el.textContent = trigger && trigger.dataset[f.key] || '';
+      const el = document.getElementById(f.id);
+      if (el) {el.textContent = trigger && trigger.dataset[f.key] || '';}
     });
 
-    var comprarBtn = document.getElementById('modalComprarBtn');
+    const comprarBtn = document.getElementById('modalComprarBtn');
     if (comprarBtn && trigger) {
       comprarBtn.href = '/html-css/formulario/formulario.html?producto=' + encodeURIComponent(trigger.dataset.producto || '');
     }
@@ -76,8 +76,8 @@
     document.addEventListener('keydown', onEscape);
 
     requestAnimationFrame(function() {
-      var first = modal.querySelector(focusableSelector);
-      if (first) first.focus();
+      const first = modal.querySelector(focusableSelector);
+      if (first) {first.focus();}
     });
   }
 
@@ -86,18 +86,18 @@
     modal.classList.remove('show');
     if (backdrop) {
       backdrop.classList.remove('show');
-      var b = backdrop;
-      setTimeout(function() { if (b.parentNode) b.parentNode.removeChild(b); }, 300);
+      const b = backdrop;
+      setTimeout(function() { if (b.parentNode) {b.parentNode.removeChild(b);} }, 300);
       backdrop = null;
     }
     document.body.style.overflow = '';
     document.removeEventListener('keydown', trapFocus);
     document.removeEventListener('keydown', onEscape);
-    if (previousFocus) previousFocus.focus();
+    if (previousFocus) {previousFocus.focus();}
   }
 
   function onEscape(e) {
-    if (e.key === 'Escape') close();
+    if (e.key === 'Escape') {close();}
   }
 
   document.querySelectorAll('[data-modal-target="modalProducto"]').forEach(function(btn) {

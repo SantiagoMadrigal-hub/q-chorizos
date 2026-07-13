@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const scheduleParallax = function() {
-      if (rafId !== null) return;
+      if (rafId !== null) {return;}
       rafId = window.requestAnimationFrame(applyScrollParallax);
     };
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       function scheduleMouse() {
-        if (mraf != null) return;
+        if (mraf != null) {return;}
         mraf = window.requestAnimationFrame(applyMouse);
       }
 

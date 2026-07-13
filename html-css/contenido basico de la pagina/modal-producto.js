@@ -1,45 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById('modalProducto');
-  if (!modal) return;
+  const modal = document.getElementById('modalProducto');
+  if (!modal) {return;}
 
-  var qtyInput = document.getElementById('modalQty');
-  var qtyMinus = document.getElementById('modalQtyMinus');
-  var qtyPlus = document.getElementById('modalQtyPlus');
-  var comprarBtn = document.getElementById('modalComprarBtn');
-  var currentProducto = '';
+  const qtyInput = document.getElementById('modalQty');
+  const qtyMinus = document.getElementById('modalQtyMinus');
+  const qtyPlus = document.getElementById('modalQtyPlus');
+  const comprarBtn = document.getElementById('modalComprarBtn');
+  let currentProducto = '';
 
   function updateQty(delta) {
-    if (!qtyInput) return;
-    var val = parseInt(qtyInput.value, 10) || 1;
+    if (!qtyInput) {return;}
+    let val = parseInt(qtyInput.value, 10) || 1;
     val = Math.max(1, Math.min(99, val + delta));
     qtyInput.value = val;
     updateComprarLink();
   }
 
   function updateComprarLink() {
-    if (!comprarBtn) return;
-    var qty = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
+    if (!comprarBtn) {return;}
+    const qty = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
     comprarBtn.href = '/html-css/formulario/formulario.html?producto=' + encodeURIComponent(currentProducto) + '&cantidad=' + qty;
   }
 
-  if (qtyMinus) qtyMinus.addEventListener('click', function() { updateQty(-1); });
-  if (qtyPlus) qtyPlus.addEventListener('click', function() { updateQty(1); });
+  if (qtyMinus) {qtyMinus.addEventListener('click', function() { updateQty(-1); });}
+  if (qtyPlus) {qtyPlus.addEventListener('click', function() { updateQty(1); });}
 
-  if (qtyInput) qtyInput.addEventListener('input', updateComprarLink);
+  if (qtyInput) {qtyInput.addEventListener('input', updateComprarLink);}
 
   modal.addEventListener('show.bs.modal', function(event) {
-    var button = event.relatedTarget;
-    if (!button) return;
+    const button = event.relatedTarget;
+    if (!button) {return;}
 
     currentProducto = button.dataset.producto;
-    if (qtyInput) qtyInput.value = '1';
+    if (qtyInput) {qtyInput.value = '1';}
 
     document.getElementById('modalTitulo').textContent = currentProducto;
     document.getElementById('modalPrecio').textContent = button.dataset.precio;
 
-    var img = document.getElementById('modalImagen');
-    var webpSrc = document.getElementById('modalImagenWebp');
-    var originalSrc = button.dataset.imagen;
+    const img = document.getElementById('modalImagen');
+    const webpSrc = document.getElementById('modalImagenWebp');
+    const originalSrc = button.dataset.imagen;
     img.src = originalSrc;
     img.alt = currentProducto || '';
     if (webpSrc) {

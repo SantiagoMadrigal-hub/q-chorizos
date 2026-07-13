@@ -1,21 +1,21 @@
 // js/form-submission.js
 document.addEventListener('DOMContentLoaded', function() {
-  var form = document.querySelector('.form');
-  var submitBtn = document.querySelector('.btn-submit');
-  var btnText = submitBtn.querySelector('.btn-text');
+  const form = document.querySelector('.form');
+  const submitBtn = document.querySelector('.btn-submit');
+  const btnText = submitBtn.querySelector('.btn-text');
 
   /* ── Rating Modal refs ── */
-  var ratingModal = document.getElementById('ratingModal');
-  var ratingFeedback = document.getElementById('ratingFeedback');
-  var ratingComment = document.getElementById('ratingComment');
-  var charCount = document.getElementById('charCount');
-  var ratingSubmit = document.getElementById('ratingSubmit');
-  var ratingSkip = document.getElementById('ratingSkip');
-  var ratingSuccess = document.getElementById('ratingSuccess');
-  var savedPedido = null;
-  var previousFocusedElement = null;
+  const ratingModal = document.getElementById('ratingModal');
+  const ratingFeedback = document.getElementById('ratingFeedback');
+  const ratingComment = document.getElementById('ratingComment');
+  const charCount = document.getElementById('charCount');
+  const ratingSubmit = document.getElementById('ratingSubmit');
+  const ratingSkip = document.getElementById('ratingSkip');
+  const ratingSuccess = document.getElementById('ratingSuccess');
+  let savedPedido = null;
+  let previousFocusedElement = null;
 
-  var feedbackLabels = {
+  const feedbackLabels = {
     5: { text: '¡Increíble! Nos encanta que hayas disfrutado.', className: 'is-high' },
     4: { text: '¡Muy bueno! Agradecemos tu opinión.', className: 'is-high' },
     3: { text: 'Está bien. Cuéntanos cómo mejorar.', className: 'is-medium' },
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function showFeedback(type, message) {
-    var el = document.getElementById('order-feedback');
+    let el = document.getElementById('order-feedback');
     if (!el) {
       el = document.createElement('div');
       el.id = 'order-feedback';
@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function hideFeedback() {
-    var el = document.getElementById('order-feedback');
-    if (el) el.style.display = 'none';
+    const el = document.getElementById('order-feedback');
+    if (el) {el.style.display = 'none';}
   }
 
   /* ── Open / Close rating modal ── */
@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = 'hidden';
 
     /* Move focus to first focusable element inside modal */
-    var firstFocusable = ratingModal.querySelector('button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
-    if (firstFocusable) firstFocusable.focus();
+    const firstFocusable = ratingModal.querySelector('button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+    if (firstFocusable) {firstFocusable.focus();}
 
     /* Reset stars */
-    var checked = ratingModal.querySelector('.rating-stars__input:checked');
-    if (checked) checked.checked = false;
+    const checked = ratingModal.querySelector('.rating-stars__input:checked');
+    if (checked) {checked.checked = false;}
     ratingFeedback.textContent = '';
     ratingFeedback.className = 'rating-stars__feedback';
     ratingComment.value = '';
@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
     ratingSubmit.textContent = 'Enviar calificación';
     ratingSubmit.className = 'rating-actions__submit';
     ratingSuccess.style.display = '';
-    var sentEl = ratingModal.querySelector('.rating-modal__sent');
-    if (sentEl) sentEl.classList.remove('is-visible');
+    const sentEl = ratingModal.querySelector('.rating-modal__sent');
+    if (sentEl) {sentEl.classList.remove('is-visible');}
   }
 
   function closeRatingModal() {
@@ -80,15 +80,15 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = '';
 
     /* Restore focus to the element that opened the modal */
-    if (previousFocusedElement) previousFocusedElement.focus();
+    if (previousFocusedElement) {previousFocusedElement.focus();}
     previousFocusedElement = null;
   }
 
   /* ── Star rating change ── */
   ratingModal.addEventListener('change', function(e) {
     if (e.target.classList.contains('rating-stars__input')) {
-      var val = parseInt(e.target.value);
-      var label = feedbackLabels[val];
+      const val = parseInt(e.target.value);
+      const label = feedbackLabels[val];
       if (label) {
         ratingFeedback.textContent = label.text;
         ratingFeedback.className = 'rating-stars__feedback ' + label.className;
@@ -98,23 +98,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* ── Comment char count ── */
   ratingComment.addEventListener('input', function() {
-    var len = this.value.length;
+    const len = this.value.length;
     charCount.textContent = len + '/500';
     charCount.classList.toggle('is-near-limit', len > 450);
-    if (len > 500) this.value = this.value.slice(0, 500);
+    if (len > 500) {this.value = this.value.slice(0, 500);}
   });
 
   /* ── Submit rating ── */
   ratingSubmit.addEventListener('click', async function() {
-    var selected = ratingModal.querySelector('.rating-stars__input:checked');
+    const selected = ratingModal.querySelector('.rating-stars__input:checked');
     if (!selected) {
       ratingFeedback.textContent = 'Selecciona una calificación antes de enviar.';
       ratingFeedback.className = 'rating-stars__feedback is-low';
       return;
     }
 
-    var ratingValue = parseInt(selected.value);
-    var comment = ratingComment.value.trim();
+    const ratingValue = parseInt(selected.value);
+    const comment = ratingComment.value.trim();
 
     ratingSubmit.disabled = true;
     ratingSubmit.textContent = 'Enviando...';
@@ -128,13 +128,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      var result = await window.supabaseClient.rpc('insertar_feedback', {
+      const result = await window.supabaseClient.rpc('insertar_feedback', {
         p_calificacion: ratingValue,
         p_comentario: comment || '',
         p_fuente: 'formulario-pedido'
       });
 
-      if (result.error) throw result.error;
+      if (result.error) {throw result.error;}
 
       showSentState();
 
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function showSentState() {
     ratingSuccess.style.display = 'none';
 
-    var sentEl = ratingModal.querySelector('.rating-modal__sent');
+    let sentEl = ratingModal.querySelector('.rating-modal__sent');
     if (!sentEl) {
       sentEl = document.createElement('div');
       sentEl.className = 'rating-modal__sent';
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* ── Close on Escape + Focus trap on Tab ── */
   document.addEventListener('keydown', function(e) {
-    if (!ratingModal.classList.contains('is-open')) return;
+    if (!ratingModal.classList.contains('is-open')) {return;}
 
     if (e.key === 'Escape') {
       e.preventDefault();
@@ -193,9 +193,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (e.key === 'Tab') {
-      var focusable = ratingModal.querySelectorAll('button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
-      var first = focusable[0];
-      var last = focusable[focusable.length - 1];
+      const focusable = ratingModal.querySelectorAll('button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
 
       if (e.shiftKey) {
         if (document.activeElement === first) {
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  var confirmation = document.getElementById('orderConfirmation');
+  const confirmation = document.getElementById('orderConfirmation');
 
   /* ══════════════════════════════════════
      FORM SUBMIT
@@ -221,16 +221,16 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     hideFeedback();
 
-    var nombre = document.getElementById('nombre').value.trim();
-    var telefono = document.getElementById('telefono').value.trim();
-    var correo = document.getElementById('correo').value.trim();
-    var direccion = document.getElementById('direccion').value.trim();
-    var instrucciones = document.getElementById('instrucciones').value.trim();
-    var cantidad = parseInt(document.getElementById('cantidad').value) || 1;
-    var metodoPago = document.getElementById('metodo-pago').value;
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+    const direccion = document.getElementById('direccion').value.trim();
+    const instrucciones = document.getElementById('instrucciones').value.trim();
+    const cantidad = parseInt(document.getElementById('cantidad').value) || 1;
+    const metodoPago = document.getElementById('metodo-pago').value;
 
-    var productoForm = document.getElementById('producto');
-    var productoVal = productoForm ? productoForm.value : '';
+    const productoForm = document.getElementById('producto');
+    const productoVal = productoForm ? productoForm.value : '';
 
     if (!nombre || !telefono || !correo || !direccion || !productoVal || !cantidad || !metodoPago) {
       showFeedback('error', 'Por favor completa todos los campos obligatorios.');
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setSubmitting(true);
 
-    var pedido = {
+    const pedido = {
       nombre_completo: nombre,
       telefono: telefono,
       email: correo,
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      var result = await window.supabaseClient.rpc('insertar_pedido', {
+      const result = await window.supabaseClient.rpc('insertar_pedido', {
         p_nombre_completo: pedido.nombre_completo,
         p_telefono: pedido.telefono,
         p_email: pedido.email,
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
         p_precio_unitario: pedido.precio_unitario
       });
 
-      if (result.error) throw result.error;
+      if (result.error) {throw result.error;}
 
       /* Hide form, show confirmation */
       form.style.display = 'none';
@@ -287,12 +287,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 800);
 
     } catch (err) {
-      var errorMsg = err.message || err.error_description || 'Error de conexión. Intenta de nuevo.';
+      const errorMsg = err.message || err.error_description || 'Error de conexión. Intenta de nuevo.';
       showFeedback('error', errorMsg);
 
       /* Add retry button */
-      var feedbackEl = document.getElementById('order-feedback');
-      var retryBtn = feedbackEl.querySelector('.order-feedback-retry');
+      const feedbackEl = document.getElementById('order-feedback');
+      let retryBtn = feedbackEl.querySelector('.order-feedback-retry');
       if (!retryBtn) {
         retryBtn = document.createElement('button');
         retryBtn.className = 'order-feedback-retry';

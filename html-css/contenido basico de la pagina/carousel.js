@@ -1,30 +1,30 @@
 (function() {
   'use strict';
 
-  var carousel = document.querySelector('.hero-carousel');
-  if (!carousel) return;
+  const carousel = document.querySelector('.hero-carousel');
+  if (!carousel) {return;}
 
-  var items = carousel.querySelectorAll('.carousel-item');
-  var indicators = carousel.querySelectorAll('.carousel-indicators [data-bs-slide-to]');
-  var prevBtn = carousel.querySelector('.carousel-control-prev');
-  var nextBtn = carousel.querySelector('.carousel-control-next');
-  if (!items.length) return;
+  const items = carousel.querySelectorAll('.carousel-item');
+  const indicators = carousel.querySelectorAll('.carousel-indicators [data-bs-slide-to]');
+  const prevBtn = carousel.querySelector('.carousel-control-prev');
+  const nextBtn = carousel.querySelector('.carousel-control-next');
+  if (!items.length) {return;}
 
-  var current = 0;
-  var interval = parseInt(carousel.getAttribute('data-bs-interval'), 10) || 5000;
-  var timer = null;
-  var isPaused = false;
+  let current = 0;
+  const interval = parseInt(carousel.getAttribute('data-bs-interval'), 10) || 5000;
+  let timer = null;
+  let isPaused = false;
 
   function goTo(index) {
-    if (index === current) return;
+    if (index === current) {return;}
     items[current].classList.remove('active');
-    if (indicators[current]) indicators[current].classList.remove('active');
+    if (indicators[current]) {indicators[current].classList.remove('active');}
     current = index;
     items[current].classList.add('active');
-    if (indicators[current]) indicators[current].classList.add('active');
+    if (indicators[current]) {indicators[current].classList.add('active');}
 
-    var activeImg = items[current].querySelector('img[data-src]');
-    var activeSource = items[current].querySelector('source[data-srcset]');
+    const activeImg = items[current].querySelector('img[data-src]');
+    const activeSource = items[current].querySelector('source[data-srcset]');
     if (activeImg && activeImg.getAttribute('data-src')) {
       activeImg.src = activeImg.getAttribute('data-src');
       activeImg.removeAttribute('data-src');
@@ -34,9 +34,9 @@
       activeSource.removeAttribute('data-srcset');
     }
 
-    var next = items[(current + 1) % items.length];
-    var nextImg = next.querySelector('img[data-src]');
-    var nextSource = next.querySelector('source[data-srcset]');
+    const next = items[(current + 1) % items.length];
+    const nextImg = next.querySelector('img[data-src]');
+    const nextSource = next.querySelector('source[data-srcset]');
     if (nextImg && nextImg.getAttribute('data-src')) {
       nextImg.src = nextImg.getAttribute('data-src');
       nextImg.removeAttribute('data-src');
@@ -66,12 +66,12 @@
     if (timer) { clearInterval(timer); timer = null; }
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', function(e) { e.preventDefault(); prev(); startAutoplay(); });
-  if (nextBtn) nextBtn.addEventListener('click', function(e) { e.preventDefault(); next(); startAutoplay(); });
+  if (prevBtn) {prevBtn.addEventListener('click', function(e) { e.preventDefault(); prev(); startAutoplay(); });}
+  if (nextBtn) {nextBtn.addEventListener('click', function(e) { e.preventDefault(); next(); startAutoplay(); });}
 
   indicators.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var idx = parseInt(btn.getAttribute('data-bs-slide-to'), 10);
+      const idx = parseInt(btn.getAttribute('data-bs-slide-to'), 10);
       if (!isNaN(idx)) { goTo(idx); startAutoplay(); }
     });
   });
