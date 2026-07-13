@@ -29,7 +29,19 @@ UPDATE "Pedidos" SET producto = 'Chorizo tradicional' WHERE producto IS NULL;
 -- Luego añade la restricción (descomenta si quieres enforzarlo)
 -- ALTER TABLE "Pedidos" ALTER COLUMN producto SET NOT NULL;
 
--- 3. Reemplazar función insertar_pedido con soporte para producto y precio
+-- 3. ELIMINAR función antigua (con firma diferente) y crear la nueva
+-- PostgreSQL no permite CREATE OR REPLACE si cambia la firma
+DROP FUNCTION IF EXISTS insertar_pedido(
+  p_nombre_completo TEXT,
+  p_telefono TEXT,
+  p_email TEXT,
+  p_direccion_entrega TEXT,
+  p_instrucciones TEXT,
+  p_cantidad INTEGER,
+  p_metodo_pago TEXT
+);
+
+-- 4. Crear función nueva con producto y precio
 CREATE OR REPLACE FUNCTION insertar_pedido(
   p_nombre_completo TEXT,
   p_telefono TEXT,
@@ -111,5 +123,5 @@ BEGIN
 END;
 $$;
 
--- 4. Permiso para que anónimos ejecuten la función (re-grant por si acaso)
+-- 5. Permiso para que anónimos ejecuten la función
 GRANT EXECUTE ON FUNCTION insertar_pedido TO anon;
