@@ -4,8 +4,43 @@ document.addEventListener('DOMContentLoaded', function() {
   const submitBtn = document.querySelector('.btn-submit');
   const btnText = submitBtn.querySelector('.btn-text');
 
-  /* ── Rating Modal refs ── */
-  const ratingModal = document.getElementById('ratingModal');
+  /* ── Mock payment simulation (demo only) ── */
+  async function mockPayment(pedido) {
+    await new Promise(resolve => setTimeout(resolve, 1200));
+    return {
+      id: 'pay_mock_' + Date.now(),
+      status: 'approved',
+      metodo: pedido.metodo_pago,
+      monto: pedido.precio_unitario * pedido.cantidad,
+      reference: 'ORD-' + Date.now().toString(36).toUpperCase()
+    };
+  }
+
+  function showPaymentToast(payment) {
+    let toast = document.getElementById('payment-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'payment-toast';
+      toast.className = 'payment-toast';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = `
+      <div class="payment-toast-inner">
+        <span class="payment-toast-icon" aria-hidden="true">✅</span>
+        <div class="payment-toast-content">
+          <strong>Pago simulado aprobado</strong>
+          <small>En producción: ${payment.metodo} → Wompi / MercadoPago</small>
+          <small>Ref: ${payment.reference} · $${payment.monto.toLocaleString('es-CO')}</small>
+        </div>
+      </div>
+    `;
+    toast.classList.add('is-visible');
+    setTimeout(() => {
+      toast.classList.remove('is-visible');
+    }, 6000);
+  }
   const ratingFeedback = document.getElementById('ratingFeedback');
   const ratingComment = document.getElementById('ratingComment');
   const charCount = document.getElementById('charCount');
@@ -258,6 +293,9 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Simulando env\u00edo (Supabase no configurado):', pedido);
         await new Promise(function(r) { setTimeout(r, 800); });
 
+        const payment = await mockPayment(pedido);
+        showPaymentToast(payment);
+
         form.style.display = 'none';
         confirmation.classList.add('is-visible');
         setTimeout(function() { openRatingModal(); }, 800);
@@ -277,6 +315,10 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       if (result.error) {throw result.error;}
+
+      /* Simulate payment after order saved */
+      const payment = await mockPayment(pedido);
+      showPaymentToast(payment);
 
       /* Hide form, show confirmation */
       form.style.display = 'none';
