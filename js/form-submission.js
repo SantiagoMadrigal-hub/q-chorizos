@@ -286,8 +286,6 @@ document.addEventListener('DOMContentLoaded', function() {
       precio_unitario: window._selectedPrecio || 12900
     };
 
-    savedPedido = pedido;
-
     try {
       if (!window.__supabaseReady || !window.supabaseClient) {
         console.log('Simulando env\u00edo (Supabase no configurado):', pedido);
