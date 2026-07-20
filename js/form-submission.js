@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const ratingSubmit = document.getElementById('ratingSubmit');
   const ratingSkip = document.getElementById('ratingSkip');
   const ratingSuccess = document.getElementById('ratingSuccess');
-  let savedPedido = null;
+  const ratingModal = document.getElementById('ratingModal');
   let previousFocusedElement = null;
 
   const feedbackLabels = {
