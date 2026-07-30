@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://q-chorizos.vercel.app/sitemap.xml
+Sitemap: https://q-chorizos.com/sitemap.xml
